@@ -4,6 +4,10 @@ import ohtu.interfaces.Bank;
 import ohtu.interfaces.Generaattori;
 import ohtu.interfaces.Storage;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Kauppa {
 
     private Storage varasto;
@@ -12,6 +16,7 @@ public class Kauppa {
     private Generaattori viitegeneraattori;
     private String kaupanTili;
 
+    @Autowired
     public Kauppa(Storage storage, Bank bank, Generaattori gen) {
         varasto = storage;
         pankki = bank;

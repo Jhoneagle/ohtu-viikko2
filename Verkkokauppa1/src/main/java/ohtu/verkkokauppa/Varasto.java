@@ -5,10 +5,15 @@ import ohtu.interfaces.Storage;
 
 import java.util.*;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Varasto implements Storage {
     private Booking kirjanpito;
-    private HashMap<Tuote, Integer> saldot;  
-    
+    private HashMap<Tuote, Integer> saldot;
+
+    @Autowired
     public Varasto(Booking accounting) {
         kirjanpito = accounting;
         saldot = new HashMap<Tuote, Integer>();
