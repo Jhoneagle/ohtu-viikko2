@@ -1,17 +1,21 @@
 package ohtu.verkkokauppa;
 
+import ohtu.interfaces.Bank;
+import ohtu.interfaces.Generaattori;
+import ohtu.interfaces.Storage;
+
 public class Kauppa {
 
-    private Varasto varasto;
-    private Pankki pankki;
+    private Storage varasto;
+    private Bank pankki;
     private Ostoskori ostoskori;
-    private Viitegeneraattori viitegeneraattori;
+    private Generaattori viitegeneraattori;
     private String kaupanTili;
 
-    public Kauppa() {
-        varasto = Varasto.getInstance();
-        pankki = Pankki.getInstance();
-        viitegeneraattori = Viitegeneraattori.getInstance();
+    public Kauppa(Storage storage, Bank bank, Generaattori gen) {
+        varasto = storage;
+        pankki = bank;
+        viitegeneraattori = gen;
         kaupanTili = "33333-44455";
     }
 
